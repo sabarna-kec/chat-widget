@@ -102,9 +102,10 @@ export const ChatContainer = ({ className }) => {
   const fetchQuestions = async () => {
     try {
       const res = await questionService.getQuestions();
-      setQuestions(res.data);
+      setQuestions(Array.isArray(res.data) ? res.data : []);
     } catch (error) {
       console.error("Error fetching questions:", error);
+      setQuestions([]);
     }
   };
 
