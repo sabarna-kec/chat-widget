@@ -16,13 +16,13 @@ spec:
         app: backend
     spec:
       containers:
-        - name: backend
-          image: chat-widget-backend:latest
+      - name: backend
+        image: chat-widget-backend:latest
         imagePullPolicy: Never
-          ports:
-            - containerPort: 5000
-              name: http
-          env:
+        ports:
+        - containerPort: 5000
+          name: http
+        env:
             - name: MONGODB_URI
               valueFrom:
                 configMapKeyRef:

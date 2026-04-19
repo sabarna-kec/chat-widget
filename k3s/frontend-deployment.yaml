@@ -16,13 +16,13 @@ spec:
         app: frontend
     spec:
       containers:
-        - name: frontend
-          image: chat-widget-frontend:latest
+      - name: frontend
+        image: chat-widget-frontend:latest
         imagePullPolicy: Never
-          ports:
-            - containerPort: 5173
-              name: http
-          env:
+        ports:
+        - containerPort: 5173
+          name: http
+        env:
             - name: VITE_API_URL
               valueFrom:
                 configMapKeyRef:
