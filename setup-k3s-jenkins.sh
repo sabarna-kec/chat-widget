@@ -11,7 +11,7 @@ echo "🚀 Starting K3s installation..."
 sudo yum update -y
 
 # Install required packages
-sudo yum install -y git curl wget
+sudo yum install -y git  wget
 
 # Install K3s
 echo "📦 Installing K3s..."
