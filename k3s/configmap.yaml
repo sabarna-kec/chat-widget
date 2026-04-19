@@ -7,5 +7,5 @@ data:
   MONGODB_URI: "mongodb+srv://sab:sab@cluster0.buzlvja.mongodb.net/chat-widget"
   PORT: "5000"
   NODE_ENV: "production"
-  VITE_API_URL: "http://13.232.3.204/api"
-  VITE_WEBSOCKET_URL: "ws://13.232.3.204"
+  VITE_API_URL: "http://43.205.110.133/api"
+  VITE_WEBSOCKET_URL: "ws://43.205.110.133:5000"
