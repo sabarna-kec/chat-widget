@@ -18,7 +18,7 @@ spec:
       containers:
         - name: backend
           image: chat-widget-backend:latest
-          imagePullPolicy: Always
+        imagePullPolicy: Never
           ports:
             - containerPort: 5000
               name: http
