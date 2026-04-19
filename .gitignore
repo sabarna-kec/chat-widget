@@ -4,4 +4,7 @@ dist
 dist-ssr
 *.local
 .env
+.env.local
+backend/.env
+frontend/.env
 sample_assets
