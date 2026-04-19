@@ -2,7 +2,7 @@
 
 # 📌 Project Title (Working)
 
-**AnonQ Chat**
+**Chat-widget**
 *(Anonymous Question–Answer Platform in a Chat Interface)*
 
 ---
