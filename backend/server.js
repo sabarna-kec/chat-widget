@@ -30,8 +30,7 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // WebSocket Setup
-const WEBSOCKET_PATH = process.env.WEBSOCKET_PATH || "/ws";
-setupWebSocket(server, WEBSOCKET_PATH);
+setupWebSocket(server);
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {

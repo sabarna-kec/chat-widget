@@ -4,21 +4,13 @@ metadata:
   name: chat-widget-ingress
   namespace: chat-widget
   annotations:
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    kubernetes.io/ingress.class: "traefik"
 spec:
-  ingressClassName: nginx
   rules:
-    - http:
+    - host: "13.232.3.204"
+      http:
         paths:
           - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: backend
-                port:
-                  number: 5000
-          - path: /ws
             pathType: Prefix
             backend:
               service:

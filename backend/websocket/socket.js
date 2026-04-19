@@ -1,8 +1,8 @@
 const { WebSocketServer } = require("ws");
 const Answer = require("../models/Answer");
 
-function setupWebSocket(server, websocketPath = "/ws") {
-  const wss = new WebSocketServer({ server, path: websocketPath });
+function setupWebSocket(server) {
+  const wss = new WebSocketServer({ server });
 
   wss.on("connection", (ws) => {
     console.log("Client connected via WebSocket");
