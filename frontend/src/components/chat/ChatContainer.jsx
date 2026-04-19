@@ -15,7 +15,11 @@ const runtimeWsProtocol =
   typeof window !== "undefined" && window.location.protocol === "https:"
     ? "wss:"
     : "ws:";
-const defaultWebSocketUrl = `${runtimeWsProtocol}//${runtimeHost}:5000`;
+const runtimePort =
+  typeof window !== "undefined" && window.location.port
+    ? `:${window.location.port}`
+    : "";
+const defaultWebSocketUrl = `${runtimeWsProtocol}//${runtimeHost}${runtimePort}/ws`;
 const WEBSOCKET_URL = import.meta.env.VITE_WEBSOCKET_URL || defaultWebSocketUrl;
 const ANIMALS = [
   "🦊",
