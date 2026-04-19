@@ -23,22 +23,22 @@ spec:
         - containerPort: 5000
           name: http
         env:
-            - name: MONGODB_URI
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: MONGODB_URI
-            - name: PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: PORT
-            - name: NODE_ENV
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: NODE_ENV
-          resources:
+        - name: MONGODB_URI
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: MONGODB_URI
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: PORT
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: NODE_ENV
+        resources:
             requests:
               memory: "256Mi"
               cpu: "250m"
