@@ -9,7 +9,14 @@ import {
   sessionService,
 } from "../../services/api";
 
-const WEBSOCKET_URL = import.meta.env.VITE_WEBSOCKET_URL || "ws://localhost:5000";
+const runtimeHost =
+  typeof window !== "undefined" ? window.location.hostname : "localhost";
+const runtimeWsProtocol =
+  typeof window !== "undefined" && window.location.protocol === "https:"
+    ? "wss:"
+    : "ws:";
+const defaultWebSocketUrl = `${runtimeWsProtocol}//${runtimeHost}:5000`;
+const WEBSOCKET_URL = import.meta.env.VITE_WEBSOCKET_URL || defaultWebSocketUrl;
 const ANIMALS = [
   "🦊",
   "🐼",

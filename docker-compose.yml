@@ -18,8 +18,8 @@ services:
     ports:
       - "5173:5173"
     environment:
-      VITE_API_URL: http://localhost:5000/api
-      VITE_WEBSOCKET_URL: ws://localhost:5000
+      VITE_API_URL: ${VITE_API_URL:-}
+      VITE_WEBSOCKET_URL: ${VITE_WEBSOCKET_URL:-}
     volumes:
       - ./frontend:/app/frontend
       - /app/frontend/node_modules
