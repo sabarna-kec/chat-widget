@@ -2,14 +2,14 @@
 
 # 📌 Project Title (Working)
 
-**AnonQ Chat**
+**Chat-widget**
 *(Anonymous Question–Answer Platform in a Chat Interface)*
 
 ---
 
 # 🧠 Project Description
 
-AnonQ Chat is a **chatbot-based anonymous Q&A platform** that allows students to ask questions and receive answers from multiple peers in a **WhatsApp-like chat interface**.
+Chat-widget is a **chatbot-based anonymous Q&A platform** that allows students to ask questions and receive answers from multiple peers in a **WhatsApp-like chat interface**.
 Each question acts as an independent chat thread where multiple anonymous users can contribute answers in real time.
 
 The platform removes fear of judgment by enforcing **complete anonymity**, while maintaining quality through **AI moderation, reactions, and summaries**.
