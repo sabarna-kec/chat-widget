@@ -16,24 +16,24 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
-        image: chat-widget-frontend:latest
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 5173
-          name: http
-        env:
-        - name: VITE_API_URL
-          valueFrom:
-            configMapKeyRef:
-              name: app-config
-              key: VITE_API_URL
-        - name: VITE_WEBSOCKET_URL
-          valueFrom:
-            configMapKeyRef:
-              name: app-config
-              key: VITE_WEBSOCKET_URL
-        resources:
+        - name: frontend
+          image: chat-widget-frontend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5173
+              name: http
+          env:
+            - name: VITE_API_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: VITE_API_URL
+            - name: VITE_WEBSOCKET_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: VITE_WEBSOCKET_URL
+          resources:
             requests:
               memory: "128Mi"
               cpu: "100m"
