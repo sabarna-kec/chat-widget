@@ -42,26 +42,9 @@ services:
       - "--config.file=/etc/prometheus/prometheus.yml"
       - "--storage.tsdb.path=/prometheus"
 
-  jenkins:
-    image: jenkins/jenkins:lts
-    user: root
-    ports:
-      - "8080:8080"
-      - "50000:50000"
-    volumes:
-      - jenkins_data:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/bin/docker:/usr/bin/docker
-    networks:
-      - chat-widget-network
-    environment:
-      JENKINS_OPTS: "--httpPort=8080"
-    privileged: true
-
 networks:
   chat-widget-network:
     driver: bridge
 
 volumes:
   prometheus_data:
-  jenkins_data:

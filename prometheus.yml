@@ -7,7 +7,7 @@ global:
 scrape_configs:
   - job_name: "prometheus"
     static_configs:
-      - targets: ["localhost:9090"]
+      - targets: ["prometheus:9090"]
 
   - job_name: "backend"
     metrics_path: "/metrics"
@@ -17,4 +17,4 @@ scrape_configs:
   - job_name: "jenkins"
     metrics_path: "/prometheus"
     static_configs:
-      - targets: ["jenkins:8080"]
+      - targets: ["43.205.110.133:8080"]
