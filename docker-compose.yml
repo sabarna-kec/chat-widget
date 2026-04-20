@@ -18,8 +18,8 @@ services:
     ports:
       - "5173:5173"
     environment:
-      VITE_API_URL: ${VITE_API_URL:-}
-      VITE_WEBSOCKET_URL: ${VITE_WEBSOCKET_URL:-}
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:5000}
+      VITE_WEBSOCKET_URL: ${VITE_WEBSOCKET_URL:-ws://localhost:5000}
     volumes:
       - ./frontend:/app/frontend
       - /app/frontend/node_modules
@@ -29,6 +29,39 @@ services:
       - backend
     command: sh -c "npm install && npm run dev"
 
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - chat-widget-network
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    networks:
+      - chat-widget-network
+    environment:
+      JENKINS_OPTS: "--httpPort=8080"
+    privileged: true
+
 networks:
   chat-widget-network:
     driver: bridge
+
+volumes:
+  prometheus_data:
+  jenkins_data:
