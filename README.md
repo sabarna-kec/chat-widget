@@ -1,6 +1,6 @@
 
 
-# 📌 Project Title (Working)
+# 📌 Project Title 
 
 **Chat-widget**
 *(Anonymous Question–Answer Platform in a Chat Interface)*
